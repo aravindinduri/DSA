@@ -26,7 +26,8 @@
 // }
 
 // BETTER APPROACH
-// 
+// TC - O( n )
+// SC - O( 1 ) - NO EXTRA SPACE
 public class MoveZerosToEnd {
     static void solve(int arr[], int n) {
         int j = -1;
