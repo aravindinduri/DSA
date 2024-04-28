@@ -93,8 +93,8 @@ public class SubsetSum {
     }
 
     public static void main(String[] args) {
-        int[] arr = { 1,1,8,4,1};
-        int sum = 10;
+        int[] arr = { 1,2,4,5};
+        int sum = 6;
         boolean dp[][] = new boolean[arr.length+1][sum+1];
  
         System.out.println(isSubsetSum(arr, sum, dp));
