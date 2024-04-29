@@ -71,39 +71,34 @@ import java.util.Scanner;
 // TABULATION
 
 public class Knapscak {
-    public static int solve(int val[], int Weight[], int W, int ind, int[][] dp) {
-        if (ind == 0) {
-            if (W >= Weight[0])
-                return val[0];
-            else
-                return 0;
-        }
+    public static int solve(int val[], int Weight[], int W, int[][] dp) {
+        int n = val.length;
 
         for (int i = Weight[0]; i <= W; i++)
             dp[0][i] = val[0];
 
-        for (int i = 1; i < ind; i++) {
+        for (int i = 1; i < n; i++) {
             for (int j = 0; j <= W; j++) {
-                int notTake = 0 + dp[i - 1][j];
-                int Take = Integer.MIN_VALUE;
-                if (W >= Weight[i]) {
-                    Take = val[i] + dp[i - 1][W - Weight[i]];
-                }
-                dp[i][j] = Math.max(notTake, Take);
+                    int take = 0;
+                    int notTake = dp[i - 1][j];
+                    if (j >= Weight[i]) {
+                        take = val[i] + dp[i - 1][j - Weight[i]];
+                        
+                    }
+                    dp[i][j] = Math.max(take, notTake);
             }
         }
 
-        return dp[ind-1][W];
+        return dp[n - 1][W];
 
     }
 
     public static void main(String[] args) {
-        int[] val ={ 40, 50, 20, 11, 50, 90 };
+        int[] val = { 40, 50, 20, 11, 50, 90 };
         int[] wt = { 5, 1, 2, 2, 4, 7 };
         int n = val.length;
         int dp[][] = new int[n][9];
-        int max_value = solve(val, wt, 8, n-1, dp);
+        int max_value = solve(val, wt, 8, dp);
         System.out.println("Max value :" + max_value);
-
     }
 }

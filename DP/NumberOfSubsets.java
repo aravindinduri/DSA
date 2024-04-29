@@ -49,7 +49,7 @@ import java.util.Arrays;
 //     public static void main(String[] args) {
 //         int arr[] = { 1, 2, 3, 3, 2 };
 //         int sum = 3;
-//         int dp[][] = new int[arr.length + 1][sum + 1];
+//         int dp[][] = new int[arr.length][sum + 1];
 //         for(int[] row : dp){
 //             Arrays.fill(row, -1);
 //         }
