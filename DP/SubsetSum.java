@@ -64,7 +64,7 @@
 
 // TABULATION
 
-import java.util.Arrays;
+import java.util.*;
 
 public class SubsetSum {
     static boolean isSubsetSum(int[] a, int sum, boolean dp[][]) {

@@ -26,7 +26,7 @@ public class EqualSumPartion {
     }
 
     public static void main(String[] args) {
-        int arr[] = { 1, 2, 3, 3,5, 8 };
+        int arr[] = { 1, 2, 3, 3, 5, 8 };
         int TotalSum = 0;
         boolean isPartion = false;
         for (int i : arr)
@@ -34,7 +34,7 @@ public class EqualSumPartion {
         if (TotalSum / 2 != 0)
             isPartion = false;
         TotalSum = TotalSum / 2;
-         isPartion = isPartion(arr, TotalSum) ;
+        isPartion = isPartion(arr, TotalSum);
         System.out.println(isPartion);
     }
 
